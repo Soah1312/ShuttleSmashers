@@ -56,18 +56,48 @@ This project is built with:
 
 - Vite
 - TypeScript
-- React
 - shadcn-ui
 - Tailwind CSS
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/2777e441-9ea2-4a5c-8aba-7e649debd8ff) and click on Share -> Publish.
+### Deploy to Railway (Recommended for Production)
 
-## Can I connect a custom domain to my Lovable project?
+This project is configured for easy deployment to Railway.
 
-Yes, you can!
+**Prerequisites:**
+- Railway account ([railway.app](https://railway.app))
+- GitHub repository
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+**Deployment Steps:**
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+1. **Push to GitHub** (if not already done):
+   ```sh
+   git add .
+   git commit -m "Ready for deployment"
+   git push origin main
+   ```
+
+2. **Connect to Railway:**
+   - Go to [Railway.app](https://railway.app) and sign in
+   - Click "New Project" → "Deploy from GitHub repo"
+   - Connect your GitHub account and select this repository
+
+3. **Automatic Deployment:**
+   - Railway will automatically detect your Vite React app
+   - Build command: `npm run build`
+   - Start command: `npm run preview`
+
+4. **Custom Domain (Optional):**
+   - Go to your project settings
+   - Add your domain in the "Domains" section
+   - Configure DNS records as instructed
+
+**Configuration Files Included:**
+- `railway.json` - Railway-specific configuration
+- `Dockerfile` - Alternative Docker deployment
+- `public/_redirects` - SPA routing support
+
+### Deploy to Lovable
+
+Simply open [Lovable](https://lovable.dev/projects/2777e441-9ea2-4a5c-8aba-7e649debd8ff) and click on Share → Publish.
