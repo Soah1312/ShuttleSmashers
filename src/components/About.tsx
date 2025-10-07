@@ -86,10 +86,12 @@ const About = () => {
                     alt={coach.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h4 className="text-xl md:text-2xl font-bold text-foreground mb-1">{coach.name}</h4>
-                    <p className="text-primary font-medium">{coach.role}</p>
+                    <div className="bg-background/95 backdrop-blur-sm p-4 rounded-lg shadow-lg">
+                      <h4 className="text-xl md:text-2xl font-bold text-foreground mb-1">{coach.name}</h4>
+                      <p className="text-primary font-medium">{coach.role}</p>
+                    </div>
                   </div>
                 </div>
                 <CardContent className="p-6">

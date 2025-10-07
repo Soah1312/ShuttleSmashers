@@ -110,14 +110,16 @@ const Events = () => {
                     alt={event.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/70 to-background/20" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className="flex items-center text-success mb-2">
-                      <Trophy className="w-5 h-5 mr-2" />
-                      <span className="font-semibold">{event.winners}</span>
+                    <div className="bg-card/95 backdrop-blur-sm p-4 rounded-lg shadow-lg">
+                      <div className="flex items-center text-success mb-2">
+                        <Trophy className="w-5 h-5 mr-2" />
+                        <span className="font-semibold">{event.winners}</span>
+                      </div>
+                      <h4 className="text-xl font-bold text-foreground mb-1">{event.title}</h4>
+                      <p className="text-sm text-muted-foreground">{event.date}</p>
                     </div>
-                    <h4 className="text-xl font-bold text-foreground mb-1">{event.title}</h4>
-                    <p className="text-sm text-muted-foreground">{event.date}</p>
                   </div>
                 </div>
               </Card>

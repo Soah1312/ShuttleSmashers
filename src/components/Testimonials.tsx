@@ -66,7 +66,7 @@ const Testimonials = () => {
                 </p>
 
                 <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full overflow-hidden mr-4 ring-2 ring-primary/20">
+                  <div className="w-12 h-12 rounded-full overflow-hidden mr-4 ring-2 ring-primary/20 bg-card">
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
