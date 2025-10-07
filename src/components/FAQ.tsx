@@ -49,7 +49,7 @@ const FAQ = () => {
             Frequently Asked <span className="text-primary">Questions</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Everything you need to know about joining Ace Academy
+            Everything you need to know about joining Shuttle Smashers
           </p>
         </div>
 

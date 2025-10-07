@@ -47,7 +47,7 @@ const Navbar = () => {
             onClick={() => scrollToSection("home")}
             className="text-xl md:text-2xl font-bold text-primary hover:text-primary-light transition-colors"
           >
-            Ace Academy
+            Shuttle Smashers
           </button>
 
           {/* Desktop Navigation */}

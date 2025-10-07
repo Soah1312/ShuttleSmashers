@@ -36,7 +36,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      details: ["info@aceacademy.com", "coaching@aceacademy.com"],
+      details: ["info@shuttlesmashers.com", "coaching@shuttlesmashers.com"],
     },
     {
       icon: MapPin,

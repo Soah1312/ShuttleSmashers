@@ -55,11 +55,11 @@ const About = () => {
         {/* About Content */}
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
-            About <span className="text-primary">Ace Academy</span>
+            About <span className="text-primary">Shuttle Smashers</span>
           </h2>
           <div className="space-y-4 text-base md:text-lg text-muted-foreground">
             <p>
-              Founded in 2009, Ace Academy has become the region's premier badminton training center. 
+              Founded in 2009, Shuttle Smashers has become the region's premier badminton training center.
               Our mission is to nurture talent, build character, and create champions both on and off the court.
             </p>
             <p>
