@@ -8,7 +8,7 @@ const Programs = () => {
     {
       level: "Beginner",
       title: "Foundation Program",
-      badge: "Ages 6-10",
+      badge: "Age 6 onward",
       description: "Perfect for young players starting their badminton journey. Focus on basic techniques, footwork, and game fundamentals.",
       duration: "3 months",
       frequency: "2x per week",
@@ -24,7 +24,7 @@ const Programs = () => {
     {
       level: "Intermediate",
       title: "Development Program",
-      badge: "Ages 11-15",
+      badge: "",
       description: "Build on fundamentals with advanced techniques, tactical play, and competitive mindset development.",
       duration: "6 months",
       frequency: "3x per week",
@@ -40,7 +40,7 @@ const Programs = () => {
     {
       level: "Advanced",
       title: "Performance Program",
-      badge: "Ages 14+",
+      badge: "",
       description: "High-intensity training for serious players aiming for competitive excellence and tournament success.",
       duration: "12 months",
       frequency: "4-5x per week",
@@ -83,25 +83,27 @@ const Programs = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {programs.map((program, index) => (
             <Card
               key={index}
-              className="border-none shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-2"
+              className="border-none shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-2 flex flex-col h-full"
             >
               <CardHeader className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <Badge
-                    variant="secondary"
-                    className={`
-                      ${program.color === "success" ? "bg-success/10 text-success hover:bg-success/20" : ""}
-                      ${program.color === "primary" ? "bg-primary/10 text-primary hover:bg-primary/20" : ""}
-                      ${program.color === "accent" ? "bg-accent/10 text-accent hover:bg-accent/20" : ""}
-                      ${program.color === "destructive" ? "bg-destructive/10 text-destructive hover:bg-destructive/20" : ""}
-                    `}
-                  >
-                    {program.badge}
-                  </Badge>
+                <div className="flex items-center justify-between min-h-[2.5rem]">
+                  {program.badge ? (
+                    <Badge
+                      variant="secondary"
+                      className={`
+                        ${program.color === "success" ? "bg-success/10 text-success hover:bg-success/20" : ""}
+                        ${program.color === "primary" ? "bg-primary/10 text-primary hover:bg-primary/20" : ""}
+                        ${program.color === "accent" ? "bg-accent/10 text-accent hover:bg-accent/20" : ""}
+                        ${program.color === "destructive" ? "bg-destructive/10 text-destructive hover:bg-destructive/20" : ""}
+                      `}
+                    >
+                      {program.badge}
+                    </Badge>
+                  ) : <span />}
                   <span className="text-sm font-semibold text-muted-foreground">{program.level}</span>
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold text-foreground">{program.title}</h3>
@@ -137,12 +139,14 @@ const Programs = () => {
                 </div>
               </CardContent>
 
-              <CardFooter>
-                <Button className="w-full bg-primary hover:bg-primary-light text-primary-foreground group-hover:shadow-lg">
-                  Sign Up for This Program
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </CardFooter>
+              <div className="mt-auto">
+                <CardFooter>
+                  <Button className="w-full bg-primary hover:bg-primary-light text-primary-foreground group-hover:shadow-lg">
+                    Sign Up for This Program
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </CardFooter>
+              </div>
             </Card>
           ))}
         </div>

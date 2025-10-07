@@ -69,7 +69,7 @@ const Events = () => {
         {/* Upcoming Events */}
         <div className="mb-16">
           <h3 className="text-2xl md:text-3xl font-bold mb-8 text-foreground">Upcoming Events</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {upcomingEvents.map((event, index) => (
               <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
@@ -101,26 +101,24 @@ const Events = () => {
         {/* Past Events Highlights */}
         <div>
           <h3 className="text-2xl md:text-3xl font-bold mb-8 text-foreground">Recent Achievements</h3>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {pastEvents.map((event, index) => (
               <Card key={index} className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-all duration-300 group">
-                <div className="relative h-48 md:h-56 overflow-hidden">
+                <div className="relative overflow-hidden">
                   <img
                     src={event.image}
                     alt={event.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-48 md:h-56 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/70 to-background/20" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className="bg-card/95 backdrop-blur-sm p-4 rounded-lg shadow-lg">
-                      <div className="flex items-center text-success mb-2">
-                        <Trophy className="w-5 h-5 mr-2" />
-                        <span className="font-semibold">{event.winners}</span>
-                      </div>
-                      <h4 className="text-xl font-bold text-foreground mb-1">{event.title}</h4>
-                      <p className="text-sm text-muted-foreground">{event.date}</p>
+                  {/* On small screens show caption below image to avoid overlap */}
+                  <CardContent className="p-4 md:p-6">
+                    <div className="flex items-center text-success mb-2">
+                      <Trophy className="w-5 h-5 mr-2" />
+                      <span className="font-semibold">{event.winners}</span>
                     </div>
-                  </div>
+                    <h4 className="text-xl font-bold text-foreground mb-1">{event.title}</h4>
+                    <p className="text-sm text-muted-foreground">{event.date}</p>
+                  </CardContent>
                 </div>
               </Card>
             ))}

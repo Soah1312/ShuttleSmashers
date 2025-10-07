@@ -42,15 +42,17 @@ const Gallery = () => {
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-8">
-            <TabsTrigger value="training">Training</TabsTrigger>
-            <TabsTrigger value="tournaments">Tournaments</TabsTrigger>
-            <TabsTrigger value="awards">Awards</TabsTrigger>
-          </TabsList>
+          <div className="mb-4">
+            <TabsList className="flex w-full max-w-md mx-auto space-x-2 overflow-x-auto scrollbar-hide px-2">
+              <TabsTrigger value="training">Training</TabsTrigger>
+              <TabsTrigger value="tournaments">Tournaments</TabsTrigger>
+              <TabsTrigger value="awards">Awards</TabsTrigger>
+            </TabsList>
+          </div>
 
           {Object.entries(galleries).map(([key, images]) => (
             <TabsContent key={key} value={key} className="mt-0">
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                 {images.map((item, index) => (
                   <div
                     key={index}
@@ -59,6 +61,7 @@ const Gallery = () => {
                     <img
                       src={item.image}
                       alt={item.title}
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/98 via-background/75 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">

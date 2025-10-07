@@ -46,7 +46,7 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <Card
               key={index}
@@ -66,7 +66,7 @@ const Testimonials = () => {
                 </p>
 
                 <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full overflow-hidden mr-4 ring-2 ring-primary/20 bg-card">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden mr-4 ring-2 ring-primary/20 bg-card flex-shrink-0">
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
