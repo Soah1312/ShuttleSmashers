@@ -1,3 +1,6 @@
+import coach1 from "@/assets/coach-1.jpg";
+import coach2 from "@/assets/coach-2.jpg";
+
 export interface Coach {
   id: string;
   name: string;
@@ -27,7 +30,7 @@ export const coaches: Coach[] = [
     id: "abhinav-singh",
     name: "Abhinav Singh",
     role: "Head Coach & Director",
-    image: "/src/assets/coach-1.jpg",
+    image: coach1,
     bio: "With over 15 years of experience in badminton coaching, Abhinav Singh has established himself as one of the region's most respected coaches. He founded Shuttle Smashers Academy in 2009 with a vision to create champions both on and off the court.",
     experience: "15+ years",
     specializations: [
@@ -85,7 +88,7 @@ export const coaches: Coach[] = [
     id: "prajjawal-singh",
     name: "Prajjawal Singh",
     role: "Senior Coach",
-    image: "/src/assets/coach-2.jpg",
+    image: coach2,
     bio: "Prajjawal brings 12 years of competitive badminton experience and coaching expertise to Shuttle Smashers. Having represented at national level tournaments, he understands the demands of high-level competition.",
     experience: "12+ years",
     specializations: [
@@ -137,7 +140,7 @@ export const coaches: Coach[] = [
     id: "himanshu",
     name: "Himanshu",
     role: "Senior Coach",
-    image: "/src/assets/coach-2.jpg",
+    image: coach2,
     bio: "Himanshu specializes in youth development and beginner coaching. With 10 years of experience, he has a passion for introducing young players to the sport and building strong foundations.",
     experience: "10+ years",
     specializations: [
