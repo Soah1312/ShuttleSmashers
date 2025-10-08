@@ -1,3 +1,6 @@
+import vidyaVikasiniImg from "@/assets/vidya-vikasini.jpg";
+import dcClubImg from "@/assets/dc-club.jpg";
+
 export interface Location {
   id: string;
   name: string;
@@ -28,63 +31,63 @@ export interface Location {
 
 export const locations: Location[] = [
   {
-    id: "downtown-center",
-    name: "Shuttle Smashers Downtown Center",
-    shortName: "Downtown",
-    address: "123 Badminton Street, Downtown District",
+    id: "vidya-vikasini",
+    name: "Vidya Vikasini Badminton Court",
+    shortName: "Vidya Vikasini",
+    address: "Vidya Vikasini Badminton Court, Mumbai",
     city: "Mumbai, Maharashtra",
     phone: "+91-98765-43210",
-    email: "downtown@shuttlesmashers.com",
-    description: "Our flagship center located in the heart of the city, featuring premium facilities and expert coaching for all skill levels.",
+    email: "vidyavikasini@shuttlesmashers.com",
+    description: "Located in the heart of Mumbai, Vidya Vikasini offers premium badminton facilities with professional courts and expert coaching for players of all skill levels.",
     features: [
-      "6 Professional Courts",
+      "Professional Courts",
       "Modern Equipment",
       "Locker Rooms",
-      "Cafeteria",
       "Parking Available",
-      "Pro Shop"
+      "Expert Coaching",
+      "Group Classes"
     ],
-    image: "/src/assets/downtown-center.jpg", // You'll need to add these images
+    image: vidyaVikasiniImg,
     coordinates: {
-      lat: 19.0760,
-      lng: 72.8777
+      lat: 19.4083,
+      lng: 72.8404
     },
     programs: ["beginner-training", "intermediate-training", "advanced-training", "junior-program", "adult-program"],
-    coaches: ["abhinav-singh", "priya-sharma", "rahul-verma"],
+    coaches: ["abhinav-singh", "priya-sharma"],
     operatingHours: {
-      monday: "6:00 AM - 10:00 PM",
-      tuesday: "6:00 AM - 10:00 PM",
-      wednesday: "6:00 AM - 10:00 PM",
-      thursday: "6:00 AM - 10:00 PM",
-      friday: "6:00 AM - 10:00 PM",
+      monday: "6:00 AM - 9:00 PM",
+      tuesday: "6:00 AM - 9:00 PM",
+      wednesday: "6:00 AM - 9:00 PM",
+      thursday: "6:00 AM - 9:00 PM",
+      friday: "6:00 AM - 9:00 PM",
       saturday: "8:00 AM - 8:00 PM",
       sunday: "8:00 AM - 6:00 PM"
     }
   },
   {
-    id: "suburban-center",
-    name: "Shuttle Smashers Suburban Center",
-    shortName: "Suburban",
-    address: "456 Sports Avenue, Suburban Area",
+    id: "dc-club",
+    name: "DC Club",
+    shortName: "DC Club",
+    address: "DC Club, Mumbai",
     city: "Mumbai, Maharashtra",
-    phone: "+91-98765-43211",
-    email: "suburban@shuttlesmashers.com",
-    description: "A modern facility in the suburbs, perfect for families and students looking for quality badminton training in a serene environment.",
+    phone: "+91-87654-32109",
+    email: "dcclub@shuttlesmashers.com",
+    description: "A premier badminton destination featuring state-of-the-art facilities, perfect for serious players and families seeking quality training in a vibrant environment.",
     features: [
-      "4 Professional Courts",
-      "Kids Play Area",
-      "Group Training Rooms",
+      "Professional Courts",
+      "Kids Training Area",
+      "Modern Amenities",
       "Changing Facilities",
       "Free Parking",
-      "Equipment Rental"
+      "Equipment Available"
     ],
-    image: "/src/assets/suburban-center.jpg",
+    image: dcClubImg,
     coordinates: {
-      lat: 19.1136,
-      lng: 72.8697
+      lat: 19.3611,
+      lng: 72.8092
     },
     programs: ["beginner-training", "intermediate-training", "junior-program", "kids-camp", "senior-program"],
-    coaches: ["priya-sharma", "rahul-verma", "sneha-patel"],
+    coaches: ["priya-sharma", "rahul-verma"],
     operatingHours: {
       monday: "7:00 AM - 9:00 PM",
       tuesday: "7:00 AM - 9:00 PM",

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Navigation } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -31,7 +31,7 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+1 (555) 123-4567", "+1 (555) 987-6543"],
+      details: ["+91 98765 43210", "+91 87654 32109"],
     },
     {
       icon: Mail,
@@ -40,8 +40,8 @@ const Contact = () => {
     },
     {
       icon: MapPin,
-      title: "Address",
-      details: ["123 Sports Complex Road", "Downtown, City 12345"],
+      title: "Centers",
+      details: ["Vidya Vikasini Badminton Court", "DC Club"],
     },
     {
       icon: Clock,
@@ -87,20 +87,70 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Map */}
-            <Card className="border-none shadow-lg overflow-hidden">
-              <div className="w-full h-64 md:h-80 bg-muted">
-                <iframe
-                  title="Academy Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1841651046355!2d-73.98784368459395!3d40.74844097932847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1647894858473!5m2!1sen!2sus"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                />
-              </div>
-            </Card>
+            {/* Location Maps */}
+            <div className="grid grid-cols-1 gap-6 max-w-2xl mx-auto">
+              {/* Vidya Vikasini Center Map */}
+              <Card className="border-none shadow-lg overflow-hidden flex flex-col h-full">
+                <div className="p-4 bg-muted">
+                  <h4 className="font-bold text-foreground text-center">Vidya Vikasini Badminton Court</h4>
+                </div>
+                <div className="w-full h-80 md:h-96 bg-muted flex-1">
+                  <iframe
+                    title="Vidya Vikasini Badminton Court Location"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1999.0977132676626!2d72.84040033399617!3d19.408281321765966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7a9006015d2d9%3A0x75e9921f8dc60fda!2sVidya%20Vikasini%20Badminton%20Court!5e0!3m2!1sen!2sin!4v1759940756899!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-3 bg-background border-t">
+                  <a
+                    href="https://www.google.com/maps/dir/?api=1&destination=19.4083,72.8404"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-sm py-2">
+                      <Navigation className="w-4 h-4 mr-2" />
+                      Get Directions
+                    </Button>
+                  </a>
+                </div>
+              </Card>
+
+              {/* DC Club Center Map */}
+              <Card className="border-none shadow-lg overflow-hidden flex flex-col h-full">
+                <div className="p-4 bg-muted">
+                  <h4 className="font-bold text-foreground text-center">DC Club</h4>
+                </div>
+                <div className="w-full h-80 md:h-96 bg-muted flex-1">
+                  <iframe
+                    title="DC Club Location"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.1864125988704!2d72.80922111046581!3d19.36107944288618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ae843ca14885%3A0xd050c337bc865c5a!2sDC%20Club!5e0!3m2!1sen!2sin!4v1759940868981!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-3 bg-background border-t">
+                  <a
+                    href="https://www.google.com/maps/dir/?api=1&destination=19.3611,72.8092"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-sm py-2">
+                      <Navigation className="w-4 h-4 mr-2" />
+                      Get Directions
+                    </Button>
+                  </a>
+                </div>
+              </Card>
+            </div>
 
             {/* Social Links */}
             <div className="flex gap-4 justify-center lg:justify-start">
@@ -163,7 +213,7 @@ const Contact = () => {
                     type="tel"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+1 (555) 000-0000"
+                    placeholder="+91 98765 43210"
                     className="w-full"
                   />
                 </div>
