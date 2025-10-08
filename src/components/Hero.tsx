@@ -60,7 +60,7 @@ const Hero = () => {
                   size="lg"
                   variant="outline"
                   onClick={() => scrollToSection("programs")}
-                  className="text-white border-white/20 hover:bg-white/5 px-6 py-3"
+                  className="text-foreground border-border hover:bg-accent hover:text-accent-foreground px-6 py-3 bg-background/80 backdrop-blur-sm"
                   aria-label="Schedule a trial"
                 >
                   <Play className="mr-2" size={16} />

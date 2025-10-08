@@ -1,35 +1,16 @@
-import { Award, Users, Trophy } from "lucide-react";
+import { Award, Users, Trophy, MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { getLocationsByCoach } from "@/data/locations";
 import coach1 from "@/assets/coach-1.jpg";
 import coach2 from "@/assets/coach-2.jpg";
+import { coaches } from "@/data/coaches";
 
 const About = () => {
   const stats = [
     { icon: Trophy, label: "Championships Won", value: "50+" },
     { icon: Users, label: "Active Students", value: "500+" },
     { icon: Award, label: "Years of Excellence", value: "15+" },
-  ];
-
-  const coaches = [
-    {
-      id: "abhinav-singh",
-      name: "Abhinav Singh",
-      role: "Head Coach & Director",
-      image: coach1,
-    },
-    {
-      id: "prajjawal-singh",
-      name: "Prajjawal Singh",
-      role: "Senior Coach",
-      image: coach2,
-    },
-    {
-      id: "himanshu",
-      name: "Himanshu",
-      role: "Senior Coach",
-      image: coach2,
-    },
   ];
 
   return (
@@ -89,6 +70,14 @@ const About = () => {
                     <div className="bg-background/95 backdrop-blur-sm p-4 rounded-lg shadow-lg text-center">
                       <h4 className="text-xl md:text-2xl font-bold text-foreground mb-1">{coaches[0].name}</h4>
                       <p className="text-primary font-medium">{coaches[0].role}</p>
+                      {getLocationsByCoach(coaches[0].id).length > 0 && (
+                        <div className="flex items-center justify-center gap-1 mt-2">
+                          <MapPin className="w-3 h-3 text-muted-foreground" />
+                          <span className="text-xs text-muted-foreground">
+                            {getLocationsByCoach(coaches[0].id).map(loc => loc.shortName).join(", ")}
+                          </span>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -111,6 +100,14 @@ const About = () => {
                         <div className="bg-background/95 backdrop-blur-sm p-4 rounded-lg shadow-lg text-center">
                           <h4 className="text-xl md:text-2xl font-bold text-foreground mb-1">{coach.name}</h4>
                           <p className="text-primary font-medium">{coach.role}</p>
+                          {getLocationsByCoach(coach.id).length > 0 && (
+                            <div className="flex items-center justify-center gap-1 mt-2">
+                              <MapPin className="w-3 h-3 text-muted-foreground" />
+                              <span className="text-xs text-muted-foreground">
+                                {getLocationsByCoach(coach.id).map(loc => loc.shortName).join(", ")}
+                              </span>
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>

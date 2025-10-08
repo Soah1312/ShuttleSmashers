@@ -4,12 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Link } from "react-router-dom";
+import { locations } from "@/data/locations";
+import { coaches } from "@/data/coaches";
 
 interface SearchResult {
   id: string;
   title: string;
   description: string;
-  type: 'coach' | 'program' | 'achievement' | 'page';
+  type: 'coach' | 'program' | 'achievement' | 'location' | 'page';
   url: string;
 }
 
@@ -20,28 +22,14 @@ const SearchComponent = () => {
 
   // Sample searchable content - in a real app, this could come from a CMS or API
   const searchableContent: SearchResult[] = [
-    // Coaches
-    {
-      id: "abhinav-singh",
-      title: "Abhinav Singh",
-      description: "Head Coach & Director with 15+ years of experience",
-      type: "coach",
-      url: "/coach/abhinav-singh"
-    },
-    {
-      id: "prajjawal-singh",
-      title: "Prajjawal Singh",
-      description: "Senior Coach specializing in competitive training",
-      type: "coach",
-      url: "/coach/prajjawal-singh"
-    },
-    {
-      id: "himanshu",
-      title: "Himanshu",
-      description: "Senior Coach focused on youth development",
-      type: "coach",
-      url: "/coach/himanshu"
-    },
+    // Coaches - dynamically added from coaches data
+    ...coaches.map(coach => ({
+      id: coach.id,
+      title: coach.name,
+      description: `${coach.role} with ${coach.experience} experience`,
+      type: "coach" as const,
+      url: `/coach/${coach.id}`
+    })),
     // Programs
     {
       id: "foundation-program",
@@ -107,7 +95,15 @@ const SearchComponent = () => {
       description: "Get in touch for inquiries and enrollment",
       type: "page",
       url: "/#contact"
-    }
+    },
+    // Locations - dynamically added from locations data
+    ...locations.map(location => ({
+      id: location.id,
+      title: `${location.shortName} Center`,
+      description: location.description,
+      type: "location" as const,
+      url: `/location/${location.id}`
+    }))
   ];
 
   useEffect(() => {
