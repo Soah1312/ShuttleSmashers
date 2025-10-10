@@ -19,7 +19,7 @@ const About = () => {
         {/* Stats Grid - remove extra margin after last stat */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8">
           {stats.map((stat, index) => (
-            <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-shadow">
+            <Card key={index} className="glass-card hover:shadow-xl transition-all duration-300">
               <CardContent className="p-6 text-center">
                 <stat.icon className="w-8 h-8 md:w-12 md:h-12 mx-auto mb-3 text-primary" />
                 <div className="text-2xl md:text-3xl font-bold text-primary mb-1">{stat.value}</div>
@@ -31,10 +31,10 @@ const About = () => {
 
         {/* About Content */}
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
+          <h2 className="text-4xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
             About <span className="text-primary">Shuttle Smashers</span>
           </h2>
-          <div className="space-y-4 text-base md:text-lg text-muted-foreground">
+          <div className="space-y-4 text-lg md:text-lg text-muted-foreground">
             <p>
               Founded in 2009, Shuttle Smashers has become the region's premier badminton training center.
               Our mission is to nurture talent, build character, and create champions both on and off the court.

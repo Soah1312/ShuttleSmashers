@@ -71,7 +71,7 @@ const Events = () => {
           <h3 className="text-2xl md:text-3xl font-bold mb-8 text-foreground">Upcoming Events</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {upcomingEvents.map((event, index) => (
-              <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <Card key={index} className="glass-card hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-3">
                     <Badge className="bg-primary text-primary-foreground">{event.category}</Badge>
@@ -103,7 +103,7 @@ const Events = () => {
           <h3 className="text-2xl md:text-3xl font-bold mb-8 text-foreground">Recent Achievements</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {pastEvents.map((event, index) => (
-              <Card key={index} className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <Card key={index} className="overflow-hidden glass-card hover:shadow-xl transition-all duration-300 group">
                 <div className="relative overflow-hidden">
                   <img
                     src={event.image}

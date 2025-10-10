@@ -50,7 +50,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <Card
               key={index}
-              className="border-none shadow-lg hover:shadow-xl transition-all duration-300 group"
+              className="glass-card hover:shadow-xl transition-all duration-300 group"
             >
               <CardContent className="p-6 md:p-8">
                 <Quote className="w-10 h-10 text-primary/20 mb-4" />

@@ -53,6 +53,8 @@ All colors MUST be HSL.
     --shadow-card: 0 4px 20px -2px hsl(210 50% 20% / 0.1);
     --shadow-hover: 0 8px 30px -4px hsl(210 50% 20% / 0.15);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --glass-bg: hsl(0 0% 100% / 0.1);
+    --glass-border: hsl(0 0% 100% / 0.2);
 
     --sidebar-background: 0 0% 98%;
 
@@ -111,6 +113,8 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --glass-bg: hsl(0 0% 0% / 0.2);
+    --glass-border: hsl(0 0% 100% / 0.1);
   }
 }
 
@@ -126,5 +130,26 @@ All colors MUST be HSL.
 
   html {
     scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+  }
+
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+
+  .glass-subtle {
+    background: var(--glass-bg);
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--glass-border);
   }
 }

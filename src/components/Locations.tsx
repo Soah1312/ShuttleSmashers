@@ -19,7 +19,7 @@ const Locations = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {locations.map((location) => (
-            <Card key={location.id} className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
+            <Card key={location.id} className="overflow-hidden glass-card hover:shadow-xl transition-all duration-300 group">
               <div className="relative h-48 bg-gradient-to-br from-primary/20 to-primary/5">
                 <div className="absolute inset-0 bg-black/10"></div>
                 <div className="absolute bottom-4 left-4">

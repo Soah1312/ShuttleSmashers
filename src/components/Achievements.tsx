@@ -47,7 +47,7 @@ const Achievements = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {achievements.map((achievement) => (
             <Link key={achievement.id} to={`/achievement/${achievement.id}`}>
-              <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer">
+              <Card className="overflow-hidden glass-card hover:shadow-xl transition-all duration-300 group cursor-pointer">
                 <div className="relative overflow-hidden">
                     <img
                       src={achievement.image}

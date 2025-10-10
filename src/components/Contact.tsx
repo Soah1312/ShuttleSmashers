@@ -73,7 +73,7 @@ const Contact = () => {
           <div className="space-y-6">
             <div className="grid sm:grid-cols-2 gap-6">
               {contactInfo.map((info, index) => (
-                <Card key={index} className="border-none shadow-lg">
+                <Card key={index} className="glass-card">
                   <CardContent className="p-6">
                     <info.icon className="w-8 h-8 text-primary mb-3" />
                     <h3 className="font-bold text-foreground mb-2">{info.title}</h3>
@@ -90,7 +90,7 @@ const Contact = () => {
             {/* Location Maps */}
             <div className="grid grid-cols-1 gap-6 max-w-2xl mx-auto">
               {/* Vidya Vikasini Center Map */}
-              <Card className="border-none shadow-lg overflow-hidden flex flex-col h-full">
+              <Card className="glass-card overflow-hidden flex flex-col h-full">
                 <div className="p-4 bg-muted">
                   <h4 className="font-bold text-foreground text-center">Vidya Vikasini Badminton Court</h4>
                 </div>
@@ -121,7 +121,7 @@ const Contact = () => {
               </Card>
 
               {/* DC Club Center Map */}
-              <Card className="border-none shadow-lg overflow-hidden flex flex-col h-full">
+              <Card className="glass-card overflow-hidden flex flex-col h-full">
                 <div className="p-4 bg-muted">
                   <h4 className="font-bold text-foreground text-center">DC Club</h4>
                 </div>
@@ -168,7 +168,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="border-none shadow-lg">
+          <Card className="glass-card">
             <CardContent className="p-6 md:p-8">
               <h3 className="text-2xl font-bold text-foreground mb-6">Send Us a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-4">

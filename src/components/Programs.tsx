@@ -75,10 +75,10 @@ const Programs = () => {
     <section id="programs" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground">
+          <h2 className="text-4xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground">
             Our <span className="text-primary">Training Programs</span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Structured programs designed for every skill level and age group
           </p>
         </div>
@@ -87,7 +87,7 @@ const Programs = () => {
           {programs.map((program, index) => (
             <Card
               key={index}
-              className="border-none shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-2 flex flex-col h-full"
+              className="glass-card hover:shadow-xl transition-all duration-300 group hover:-translate-y-2 flex flex-col h-full"
             >
               <CardHeader className="space-y-3">
                 <div className="flex items-center justify-between min-h-[2.5rem]">
@@ -107,11 +107,11 @@ const Programs = () => {
                   <span className="text-sm font-semibold text-muted-foreground">{program.level}</span>
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold text-foreground">{program.title}</h3>
-                <p className="text-sm text-muted-foreground">{program.description}</p>
+                <p className="text-base text-muted-foreground">{program.description}</p>
               </CardHeader>
 
               <CardContent className="space-y-4">
-                <div className="space-y-2 text-sm">
+                <div className="space-y-2 text-base">
                   <div className="flex items-center text-muted-foreground">
                     <Clock className="w-4 h-4 mr-2 text-primary" />
                     <span>Duration: {program.duration}</span>
@@ -127,10 +127,10 @@ const Programs = () => {
                 </div>
 
                 <div className="pt-2 border-t">
-                  <p className="text-sm font-semibold text-foreground mb-2">What's Included:</p>
+                  <p className="text-base font-semibold text-foreground mb-2">What's Included:</p>
                   <ul className="space-y-1">
                     {program.features.map((feature, idx) => (
-                      <li key={idx} className="text-sm text-muted-foreground flex items-start">
+                      <li key={idx} className="text-base text-muted-foreground flex items-start">
                         <span className="text-primary mr-2">•</span>
                         {feature}
                       </li>

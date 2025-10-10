@@ -11,8 +11,8 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative w-full">
-      {/* Background image only on small+ screens so mobile text isn't overlaid on the image */}
-      <div className="hidden sm:block absolute inset-0 -z-10">
+      {/* Background image - now visible on all screens */}
+      <div className="absolute inset-0 -z-10">
         <img
           src={heroImage}
           alt="Badminton Training"
@@ -28,28 +28,28 @@ const Hero = () => {
           {/* Left: big headline and CTAs */}
           <div className="w-full md:w-1/2 text-left">
             <FadeIn delay={200}>
-              <p className="text-sm text-white/70 uppercase tracking-wider mb-4">Premier Badminton Academy</p>
+              <p className="text-sm text-white/70 uppercase tracking-wider mb-4 bg-black/20 px-2 py-1 rounded inline-block">Premier Badminton Academy</p>
             </FadeIn>
 
             <FadeIn delay={400}>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white">
-                <span className="block">Coaching for Peak</span>
-                <span className="block text-accent-400">Performance</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white drop-shadow-lg">
+                <span className="block bg-black/20 px-2 py-1 rounded inline-block">Coaching for Peak</span>
+                <span className="block text-accent-400 bg-black/20 px-2 py-1 rounded inline-block mt-2">Performance</span>
               </h1>
             </FadeIn>
 
             <FadeIn delay={600}>
-              <p className="mt-5 text-white/90 max-w-xl text-lg md:text-xl">
+              <p className="mt-5 text-white/90 max-w-xl text-xl md:text-xl bg-black/20 px-3 py-2 rounded">
                 Expert coaches, world-class facilities and a community that pushes you to be your best. Join training, camps and competitive programs for all ages.
               </p>
             </FadeIn>
 
             <FadeIn delay={800}>
-              <div className="mt-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+              <div className="mt-8 flex flex-col gap-3 items-stretch sm:flex-row sm:items-center sm:gap-4">
                 <Button
                   size="lg"
                   onClick={() => scrollToSection("contact")}
-                  className="bg-accent hover:bg-accent/95 text-accent-foreground text-lg px-6 py-3 shadow-lg"
+                  className="bg-accent hover:bg-accent/95 text-accent-foreground text-base sm:text-lg px-4 sm:px-6 py-3 shadow-lg w-full sm:w-auto"
                   aria-label="Enroll now"
                 >
                   Enroll Now
@@ -60,7 +60,7 @@ const Hero = () => {
                   size="lg"
                   variant="outline"
                   onClick={() => scrollToSection("programs")}
-                  className="text-foreground border-border hover:bg-accent hover:text-accent-foreground px-6 py-3 bg-background/80 backdrop-blur-sm"
+                  className="text-foreground border-border hover:bg-accent hover:text-accent-foreground px-4 sm:px-6 py-3 bg-background/80 backdrop-blur-sm w-full sm:w-auto"
                   aria-label="Schedule a trial"
                 >
                   <Play className="mr-2" size={16} />
@@ -70,11 +70,11 @@ const Hero = () => {
             </FadeIn>
 
             <div className="mt-6 flex flex-wrap gap-6 text-sm text-white/80">
-              <span>🏅 Professional Coaches</span>
+              <span className="bg-black/20 px-2 py-1 rounded">🏅 Professional Coaches</span>
               <span>•</span>
-              <span>🏟️ World-class Facilities</span>
+              <span className="bg-black/20 px-2 py-1 rounded">🏟️ World-class Facilities</span>
               <span className="hidden sm:inline">•</span>
-              <span className="hidden md:inline">Proven Results</span>
+              <span className="hidden md:inline bg-black/20 px-2 py-1 rounded">Proven Results</span>
             </div>
           </div>
 

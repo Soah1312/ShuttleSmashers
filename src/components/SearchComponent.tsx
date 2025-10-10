@@ -52,27 +52,27 @@ const SearchComponent = () => {
       type: "program",
       url: "/#programs"
     },
-    // Achievements
+    // Achievements (now part of gallery)
     {
       id: "winter-cup-2024",
       title: "Winter Cup 2024",
       description: "Our students dominated the Winter Cup, securing top positions",
       type: "achievement",
-      url: "/achievement/winter-cup-2024"
+      url: "/#gallery"
     },
     {
       id: "state-junior-championship",
       title: "State Junior Championship",
       description: "Outstanding performance with multiple medal winners",
       type: "achievement",
-      url: "/achievement/state-junior-championship"
+      url: "/#gallery"
     },
     {
       id: "regional-finals-2024",
       title: "Regional Finals 2024",
       description: "Our players reached the finals in multiple regional tournaments",
       type: "achievement",
-      url: "/achievement/regional-finals-2024"
+      url: "/#gallery"
     },
     // Pages
     {
