@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Navigation } from "lucide-react";
+import { supabase } from "@/lib/supabaseClient";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,11 +14,39 @@ const Contact = () => {
     phone: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success("Thank you! We'll get back to you within 24 hours.");
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    if (!supabase) {
+      toast.error("Supabase client is not configured. Please check your environment variables.");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const inquiryPayload = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || null,
+        message: formData.message,
+      };
+
+      const { error } = await supabase.from("inquiries").insert(inquiryPayload);
+
+      if (error) {
+        throw error;
+      }
+
+      toast.success("Thank you! We'll get back to you within 24 hours.");
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (submissionError) {
+      console.error("Inquiry submission failed", submissionError);
+      toast.error("We couldn't submit your inquiry. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -233,8 +262,12 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-lg py-6">
-                  Submit Inquiry
+                <Button
+                  type="submit"
+                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-lg py-6"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Submitting..." : "Submit Inquiry"}
                 </Button>
               </form>
             </CardContent>
